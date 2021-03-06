@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         body: Center(
-          child: Row(
+          child: Column(
             children: [
               Container(color: Colors.red, child: Text("DFADSAFDSKFAK")),
               Text("dfadsafkd's"),
