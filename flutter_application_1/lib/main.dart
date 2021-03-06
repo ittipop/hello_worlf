@@ -32,13 +32,19 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         body: Center(
-          child: Container(
-            width: 150,
-            height: 150,
-            color: Colors.red,
-            child: Image.asset(
-              'assets/images/1234.jpg',
-            ),
+          child: Row(
+            children: [
+              Container(color: Colors.red, child: Text("DFADSAFDSKFAK")),
+              Text("dfadsafkd's"),
+              Container(
+                width: 150,
+                height: 150,
+                color: Colors.red,
+                child: Image.asset(
+                  'assets/images/1234.jpg',
+                ),
+              ),
+            ],
           ),
         ),
       ),
