@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/page.dart';
 
 class MainScreen extends StatefulWidget {
   MainScreen({Key key}) : super(key: key);
@@ -9,6 +10,16 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  int currentIndex = 0;
+
+  get onIndexChange => null;
+
+  void onIndexChanged(int index) {
+    setState(() {
+      currentIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,6 +52,9 @@ class _MainScreenState extends State<MainScreen> {
               ),
             ),
             ListTile(
+              onTap: () {
+                Navigator.pushNamed(context, '/history');
+              },
               leading: Icon(Icons.people),
               title: Text("Profile"),
             ),
@@ -52,11 +66,31 @@ class _MainScreenState extends State<MainScreen> {
               leading: Icon(Icons.people),
               title: Text("รูปภาพ"),
             ),
+            ListTile(
+              onTap: () {
+                Navigator.pushNamed(context, '/credit');
+              },
+              leading: Icon(Icons.people),
+              title: Text("เครดิส"),
+            ),
           ],
         ),
       ),
       appBar: AppBar(
-        title: Text("App Wat"),
+        title: Text(pages[currentIndex].title),
+      ),
+      body: pages[currentIndex].page,
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: currentIndex,
+        onTap: onIndexChange,
+        items: pages
+            .map(
+              (item) => BottomNavigationBarItem(
+                icon: item.icon,
+                label: item.label,
+              ),
+            )
+            .toList(),
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/route.dart';
 import 'package:flutter_application_1/screen/main_screen.dart';
 
 void main() {
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MainScreen(),
+      onGenerateRoute: RouteGenerator.onGenerateRoute,
     );
   }
 }

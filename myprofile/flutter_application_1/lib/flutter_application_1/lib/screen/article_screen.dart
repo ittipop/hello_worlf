@@ -11,7 +11,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: child,
+      child: Text("Artic_screen"),
     );
   }
 }
